@@ -86,6 +86,7 @@
 
       "/result"
       "/result-*"
+      "result"
       ".direnv/"
     ];
   };
