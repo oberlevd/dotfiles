@@ -9,5 +9,6 @@
   imports = [
     ./development/git.nix
     ./development/ssh.nix
+    ./terminal
   ];
 }
