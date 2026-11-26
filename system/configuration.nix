@@ -5,14 +5,14 @@
     [
       ./hardware-configuration.nix
 
-      ../../system/nix.nix
-      ../../system/audio.nix
-      ../../system/locale.nix
-      ../../system/users.nix
-      ../../system/networking.nix
-      ../../system/desktop.nix
-      ../../system/printing.nix
-      ../../system/browser.nix
+      ./modules/nix.nix
+      ./modules/audio.nix
+      ./modules/locale.nix
+      ./modules/users.nix
+      ./modules/networking.nix
+      ./modules/desktop.nix
+      ./modules/printing.nix
+      ./modules/browser.nix
     ];
 
   boot.loader.grub = {
