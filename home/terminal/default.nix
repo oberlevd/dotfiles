@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./clipboard
+    ./clipboard.nix
     ./htop.nix
     ./tools.nix
   ];
