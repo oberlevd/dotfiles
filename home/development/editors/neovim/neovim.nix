@@ -6,7 +6,9 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+    sideloadInitLua = true;
   };
+
 
   xdg.configFile."nvim".source =
     config.lib.file.mkOutOfStoreSymlink
