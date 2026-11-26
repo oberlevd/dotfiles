@@ -10,6 +10,7 @@
     ./development/git.nix
     ./development/ssh.nix
     ./development/languages
+    ./development/editors
     ./terminal
   ];
 }

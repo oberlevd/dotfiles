@@ -7,8 +7,5 @@
     rustfmt
     clippy
     rust-analyzer
-
-    gcc
-    pkg-config
   ];
 }

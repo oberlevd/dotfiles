@@ -9,5 +9,7 @@
     zip
     unzip
     bat
+    fd
+    ripgrep
   ];
 }
