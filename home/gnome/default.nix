@@ -8,6 +8,7 @@
     ./interface.nix
     ./power.nix
     ./files.nix
+    ./clipboard.nix
   ];
 
   dconf.enable = true;
