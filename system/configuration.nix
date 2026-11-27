@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
 
+      ./containers
       ./modules
     ];
 
