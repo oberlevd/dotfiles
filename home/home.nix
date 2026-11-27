@@ -11,7 +11,8 @@
     ./development/ssh.nix
     ./development/build-tools.nix
     ./development/languages
-    ./development/editors
+    ./development/editor
+    ./gnome
     ./terminal
   ];
 }
