@@ -14,5 +14,7 @@
     ./development/editor
     ./gnome
     ./terminal
+    ./media
+    ./sharing
   ];
 }
