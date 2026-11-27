@@ -7,6 +7,7 @@
   home.stateVersion = "26.05";
 
   imports = [
+    ../system/niri/home.nix
     ./development/git.nix
     ./development/ssh.nix
     ./development/build-tools.nix
