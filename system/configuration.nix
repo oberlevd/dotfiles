@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./niri/nixos.nix
 
       ./containers
       ./modules
