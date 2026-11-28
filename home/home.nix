@@ -12,7 +12,7 @@
     ./development/ssh.nix
     ./development/build-tools.nix
     ./development/languages
-    ./development/editor
+    ./development/editors
     ./gnome
     ./terminal
     ./media
