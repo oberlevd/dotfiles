@@ -1,10 +1,11 @@
 _:
 
 {
-  home.username = "chouqe";
-  home.homeDirectory = "/home/chouqe";
-
-  home.stateVersion = "26.05";
+  home = {
+    username = "chouqe";
+    homeDirectory = "/home/chouqe/";
+    stateVersion = "26.05";
+  };
 
   imports = [
     ../system/niri/home.nix
