@@ -1,6 +1,14 @@
 { ... }:
 
 {
+  imports = [
+    ./waybar.nix
+    ./notifications.nix
+    ./polkit.nix
+    ./idle.nix
+    ./clipboard.nix
+  ];
+
   programs.alacritty = {
     enable = true;
 
@@ -22,11 +30,9 @@
   programs.fuzzel = {
     enable = true;
 
-    settings = {
-      main = {
-        font = "JetBrainsMono Nerd Font Mono:size=12";
-        terminal = "alacritty";
-      };
+    settings.main = {
+      font = "JetBrainsMono Nerd Font Mono:size=12";
+      terminal = "alacritty";
     };
   };
 
