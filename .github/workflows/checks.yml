@@ -1,0 +1,31 @@
+name: Checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31.11.3
+
+      - name: Check formatting and lint
+        run: nix develop --command just verify
+
+      - name: Evaluate NixOS configuration
+        run: |
+          nix eval --raw \
+            .#nixosConfigurations.desktop.config.system.build.toplevel.drvPath
