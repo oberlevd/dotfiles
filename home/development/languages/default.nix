@@ -8,6 +8,6 @@
     ./go.nix
     ./lua.nix
     ./nix.nix
-    ./development/just.nix
+    ./just.nix
   ];
 }
