@@ -1,14 +1,13 @@
 { ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./niri/nixos.nix
+  imports = [
+    ./hardware-configuration.nix
+    ./niri/nixos.nix
 
-      ./containers
-      ./modules
-    ];
+    ./containers
+    ./modules
+  ];
 
   boot.loader.grub = {
     enable = true;

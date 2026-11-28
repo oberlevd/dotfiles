@@ -4,8 +4,14 @@
   dconf.settings = {
     "org/gnome/desktop/input-sources" = {
       sources = [
-        (lib.hm.gvariant.mkTuple [ "xkb" "us" ])
-        (lib.hm.gvariant.mkTuple [ "xkb" "ru" ])
+        (lib.hm.gvariant.mkTuple [
+          "xkb"
+          "us"
+        ])
+        (lib.hm.gvariant.mkTuple [
+          "xkb"
+          "ru"
+        ])
       ];
 
       xkb-options = [

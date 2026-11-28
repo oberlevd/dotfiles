@@ -31,7 +31,7 @@
 
       fetch = {
         prune = true;
-        pruneTags =  true;
+        pruneTags = true;
       };
 
       rebase = {

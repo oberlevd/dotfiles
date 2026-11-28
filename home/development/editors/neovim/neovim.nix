@@ -9,8 +9,6 @@
     sideloadInitLua = true;
   };
 
-
   xdg.configFile."nvim".source =
-    config.lib.file.mkOutOfStoreSymlink
-      "${config.home.homeDirectory}/dotfiles/home/development/editors/neovim/config";
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/development/editors/neovim/config";
 }
