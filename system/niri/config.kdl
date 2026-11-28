@@ -39,43 +39,66 @@ prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"
 
+// Компоненты сеанса
+spawn-at-startup "waybar"
+spawn-at-startup "mako"
+spawn-at-startup "niri-polkit-agent"
+spawn-at-startup "swayidle" "-w"
+
+// История текста и изображений
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+
 binds {
+    // Приложения
     Mod+Return { spawn "alacritty"; }
     Mod+D { spawn "fuzzel"; }
     Mod+E { spawn "nautilus"; }
     Mod+Shift+C { spawn "code"; }
     Mod+B { spawn "firefox"; }
 
+    // Буфер обмена и уведомления
+    Mod+V { spawn "niri-clipboard"; }
+    Mod+Shift+N { spawn "makoctl" "dismiss" "-a"; }
+
+    // Закрытие окна
     Mod+Q { close-window; }
 
+    // Переключение между окнами
     Mod+Left { focus-column-left; }
     Mod+Right { focus-column-right; }
     Mod+Up { focus-window-up; }
     Mod+Down { focus-window-down; }
 
+    // Перемещение окон
     Mod+Shift+Left { move-column-left; }
     Mod+Shift+Right { move-column-right; }
     Mod+Shift+Up { move-window-up; }
     Mod+Shift+Down { move-window-down; }
 
+    // Рабочие столы
     Mod+Page_Up { focus-workspace-up; }
     Mod+Page_Down { focus-workspace-down; }
 
     Mod+Shift+Page_Up { move-column-to-workspace-up; }
     Mod+Shift+Page_Down { move-column-to-workspace-down; }
 
+    // Размер и положение
     Mod+R { switch-preset-column-width; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
     Mod+C { center-column; }
 
+    // Объединение окон в колонки
     Mod+BracketLeft { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
 
+    // Скриншоты
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
+    // Звук
     XF86AudioRaiseVolume allow-when-locked=true {
         spawn "wpctl" "set-volume" "-l" "1.0" "@DEFAULT_AUDIO_SINK@" "5%+";
     }
@@ -88,8 +111,10 @@ binds {
         spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle";
     }
 
-    Mod+L { spawn "swaylock"; }
+    // Блокировка и выход
+    Mod+L { spawn "swaylock" "-f"; }
     Mod+Shift+E { quit; }
 
+    // Справка
     Mod+Shift+Slash { show-hotkey-overlay; }
 }
