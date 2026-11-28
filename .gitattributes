@@ -3,5 +3,10 @@
 *.kdl   linguist-detectable=true
 *.toml  linguist-detectable=true
 
+.github         export-ignore
 .gitattributes  export-ignore
 .gitignore      export-ignore
+.czrc           export-ignore
+.editorconfig   export-ignore
+justfile        export-ignore
+.stylua.toml    export-ignore
