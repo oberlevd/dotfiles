@@ -3,7 +3,6 @@
 {
   home.packages = [
     pkgs.cliphist
-    pkgs.wl-clipboard
 
     (pkgs.writeShellApplication {
       name = "niri-clipboard";
