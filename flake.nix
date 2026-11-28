@@ -10,22 +10,39 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }: {
-    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+  outputs =
+    { nixpkgs, home-manager, ... }:
+    let
       system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
+    {
+      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+        inherit system;
 
-      modules = [
-        ./system/configuration.nix
+        modules = [
+          ./system/configuration.nix
 
-        home-manager.nixosModules.home-manager
+          home-manager.nixosModules.home-manager
 
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
 
-          home-manager.users.chouqe = import ./home/home.nix;
-        }
-      ];
+            home-manager.users.chouqe = import ./home/home.nix;
+          }
+        ];
+      };
+
+      devShells.${system}.default = pkgs.mkShell {
+        packages = with pkgs; [
+          just
+          git
+          nixfmt
+          stylua
+          statix
+          deadnix
+        ];
+      };
     };
-  };
 }
