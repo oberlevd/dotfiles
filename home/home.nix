@@ -17,5 +17,7 @@
     ./terminal
     ./media
     ./sharing
+    ./notes
+    ./browsers
   ];
 }
